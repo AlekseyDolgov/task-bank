@@ -7,60 +7,106 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<img src="предворительная_ER-диаграмма.png">
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+// Основная концепция \\
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Сайт должен работать следущим образом. Новый пользователь заходит и регистрируется вводя
+имя, пароль и электронную почту. При входе он попадает на главную страницу где он может
+выбрать блок с задание. Блок - список задач на одну тематику. Далее у него есть выбор
+просмотреть существующие задачи, сформировать рандомный вариант из существующих задач,
+сформировать вариант самостоятельно (он будет просматривать задачи как говорилось ранее).
 
-## Learning Laravel
+===========================================================================================
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+// Функции сайта \\
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Просматривать блоки задач. Каждый блок это отдельный раздел (можно реализвать как
+категории в курсовой работе Лёши)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Просматривать конкретную задачу и решение к ней. Это страница состоит из названия/заголовка
+задачи, самой задачи ввиде текста с возможным графическим представлением, кнопкой справки и
+кнопки просмотра ответ, который будет выглядеть аналогично.
 
-## Laravel Sponsors
+Просматривать справочник с материалами. Материалы - формулы, теоремы, правила и т.д.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Сформировать варианты из рандомных/самостоятельно выбранных задач. Процесс рандомной
+генерации варианта следующий, из каждого блока берётся по одной задаче и выводится на
+странице. При ручном наборе задач пользователь просто скитается по сайту и отмечает
+интересующие его задачи, как избранные.
 
-### Premium Partners
+Возможность выгрузки выбранной задачи/сформированного варианта. Эта функция позволит сохранить сгенерированный любым способом вариант в документе (ворд и/или пдф).
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+===========================================================================================
 
-## Contributing
+// Роли пользователей сайта \\
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Администратор БД - он вносит новую информацию в БД
 
-## Code of Conduct
+Администратор Преподаватель (модератор) - он получает на почту или в ЛС запрос от
+пользователей на размещение новой задачи (задачу предлогает пользователь, админ.п. ее
+рассматривает и принимает/отклоняет заявку на размещение)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Преподаватель - может просматривать сайт в поисках задач, а так же пользоваться функциями
+сайта и предлогать модератору свои задачи для публикации.
 
-## Security Vulnerabilities
+Студент - может просматривать сайт в поисках задач, а так же пользоваться функциями
+сайта.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+===========================================================================================
 
-## License
+// Описание ER-диаграммы \\
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+таблица role содержит список с названием ролей (в таблице будет заполняться поле name -
+название роли).
+
+таблица user содержит информацию о пользователях (в таблице будет заполняться имя пользователя (name), данные для входа/регистрации (password и email) и роль).
+
+таблица admin содержит список администраторов аналогичный пользователям.
+
+таблица sprav содержит в себе справочные материалы, теоремы, формулы и т.д. (таблица будет
+заполняться так: вводиться название/заголовок справки (name), вводиться сама справка
+(description) и
+если нужно можно добавить картинку (img)).
+
+таблица otvet содержит решение для задачи (заполняется так: вводится название ответа/заголовок (name), само решение вводится в description, по необходимости загрузить
+рисунок/картинку (img) и поле статус будет булевым (логическим) значением (является фичей
+для искуственного ограничения в доступе, то есть можно будет заприватить решение задачи,
+что бы его никто не мог просмотреть кроме автора этого ответа и администратора).
+
+таблица task_1 является блоком задач, то есть в одной такой таблице содержится сразу
+несколько задач на одну и тужу тему (заполнение следующее: название/заголовок задачи (name),
+сама задача (description), добавление изображения если надо (img), ссылка на решение
+(otvet_id), ссылка на справочные материалы, которые могут помочь для решения задачи
+(sprav_id)).
+
+===========================================================================================
+
+// Навигация по ER-диаграмме \\
+
+17 таблиц с названием task_1 должны быть расписаны как task_1, task_2, task_3,...
+Но из-за тормознутого конструктора ER-диаграм не получилось сделать различные названия,
+поэтому придется представить что названия таблиц task_1 различа.тся)
+
+Связь таблицы user с таблицей role один ко многим.
+
+Связь таблицы sprav с таблицами task_(1 - 17) многие ко многим (обозначены черными
+дорожками).
+
+Связь таблицы otvet с таблицами task_(1 - 17) один ко многим (но лучше сделать могие к
+одному, это из-за того что к одной задаче может быть несколько решений)(обозначены красными
+дорожками).
+
+===========================================================================================
+
+// Нюансы \\
+
+Текст в условии задачи может быть больше чем может поместиться в БД.
+
+Спец символы не поддерживаются MySQL из-за чего нужно будет менять кодировку.
+
+Для удобного ввода спецсимволов нужно добавить виргуатьную клавиатуру.
+
+Не известно, то как будет работать приватный ответ, как определить кому он будет виден, а
+кому нет.
