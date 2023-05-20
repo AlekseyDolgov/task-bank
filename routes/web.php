@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\TaskController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('main.index');
+//});
+
+Route::get('/', [TaskController::class, 'index']);
+Route::get('/add-task', [TaskController::class, 'add']);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
