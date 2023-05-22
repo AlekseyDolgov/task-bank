@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\BlockController;
+use App\Http\Controllers\SpravController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +23,10 @@ use App\Http\Controllers\BlockController;
 Route::get('/', [BlockController::class, 'index']);
 Route::get('/add-task', [BlockController::class, 'add']);
 Route::post('/task', [BlockController::class, 'store'],);
+
+Route::get('/#', [SpravController::class, 'index']);
+Route::get('/add-sprav', [SpravController::class, 'add']);
+Route::post('/sprav', [SpravController::class, 'store'],);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

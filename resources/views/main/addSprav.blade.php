@@ -5,10 +5,10 @@
         <div class="row justify-content-md-center">
             <div class="col-md-8 col-md-offset-2">
                 <div class="card mb-3">
-                    <div class="card-header">Добавить блок</div>
+                    <div class="card-header">Добавить справочный материал</div>
 
                     <div class="card-body">
-                        <form method="POST" action="/task" enctype="multipart/form-data">
+                        <form method="POST" action="/sprav" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
                             <div class="form-group mb-3">
@@ -24,7 +24,7 @@
                             </div>
                             <!-- фото-->
                             <div class="form-group bmd-form-group is-focused file-input">
-                                <label for="photo">Выберите фотографию:</label>
+                                <label for="photo">Выберите изображение:</label>
                                 <input type="file" name="img" id="img" class="form-control-file">
                             </div>
 
