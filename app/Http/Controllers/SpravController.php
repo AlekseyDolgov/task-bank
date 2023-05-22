@@ -10,12 +10,12 @@ class SpravController extends Controller
     public function index()
     {
         $sprav = Sprav::all();
-        return view('main.index', compact('sprav'));
+        return view('sprav.index', compact('sprav'));
     }
 
     public function add()
     {
-        return view('main.addSprav');
+        return view('sprav.addSprav');
     }
 
     public function store(Request $request)
@@ -39,6 +39,6 @@ class SpravController extends Controller
             'img' => $imagePath
         ]);
 
-        return redirect('/');
+        return redirect('/sprav');
     }
 }

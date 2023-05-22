@@ -24,7 +24,7 @@ Route::get('/', [BlockController::class, 'index']);
 Route::get('/add-task', [BlockController::class, 'add']);
 Route::post('/task', [BlockController::class, 'store'],);
 
-Route::get('/#', [SpravController::class, 'index']);
+Route::get('/sprav', [SpravController::class, 'index']);
 Route::get('/add-sprav', [SpravController::class, 'add']);
 Route::post('/sprav', [SpravController::class, 'store'],);
 
