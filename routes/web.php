@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\TaskController;
+use App\Http\Controllers\BlockController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,9 +19,9 @@ use App\Http\Controllers\TaskController;
 //    return view('main.index');
 //});
 
-Route::get('/', [TaskController::class, 'index']);
-Route::get('/add-task', [TaskController::class, 'add']);
-
+Route::get('/', [BlockController::class, 'index']);
+Route::get('/add-task', [BlockController::class, 'add']);
+Route::post('/task', [BlockController::class, 'store'],);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

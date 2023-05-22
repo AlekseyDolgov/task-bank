@@ -14,13 +14,10 @@ class Task extends Model
         'name',
         'description',
         'img',
+        'otvet_id',
+        'sprav_id',
+        'block_id'
     ];
 
-    public function imageIsSmaller()
-    {
-        $image_path = storage_path('app\\public\\' . $this->img);
-        $image_size = getimagesize($image_path);
 
-        return $image_size[0] < 400 || $image_size[1] < 400;
-    }
 }

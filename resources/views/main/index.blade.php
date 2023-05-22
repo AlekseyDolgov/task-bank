@@ -3,13 +3,13 @@
 
     <div class="container my-4">
         <div class="row row-cols-1 row-cols-md-3 g-4">
-            @forelse  ($tasks->sortByDesc('id') as $task)
+            @forelse  ($blosks->sortByDesc('id') as $block)
                 <div class="col">
                     <div class="card h-100">
-                        <img src="{{asset('storage/' . $task->img) }}" class="card-img-top img-fluid aspect-ratio-square @if($task->imageIsSmaller()) img-cover @endif" alt="">
+                        <img src="{{asset('storage/' . $block->img) }}" class="card-img-top img-fluid aspect-ratio-square @if($block->imageIsSmaller()) img-cover @endif" alt="">
                         <div class="card-body">
-                            <a href="#"><h5 class="card-title">{{ $task->name }}</h5></a>
-                            <p class="card-text">{{ $task->description }}</p>
+                            <a href="#"><h5 class="card-title">{{ $block->name }}</h5></a>
+                            <p class="card-text">{{ $block->description }}</p>
                         </div>
                     </div>
                 </div>
