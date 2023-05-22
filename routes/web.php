@@ -4,7 +4,11 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\BlockController;
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\SpravController;
+
+
+use App\Http\Controllers\TestController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,7 +26,12 @@ use App\Http\Controllers\SpravController;
 
 Route::get('/', [BlockController::class, 'index']);
 Route::get('/add-task', [BlockController::class, 'add']);
-Route::post('/task', [BlockController::class, 'store'],);
+Route::post('/task', [BlockController::class, 'store']);
+
+Route::get('/tasks/{block}', [TaskController::class, 'index']);
+Route::get('/add_task', [TaskController::class, 'add'])->name('add_task');
+
+Route::any('/test', [TestController::class, 'test']); // в этом контроллере можно тестировать методы
 
 Route::get('/sprav', [SpravController::class, 'index']);
 Route::get('/add-sprav', [SpravController::class, 'add']);

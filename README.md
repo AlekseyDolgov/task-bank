@@ -11,6 +11,7 @@
 * composer install
 * npm install (если после этого будет ошибка, то нужно еще выполнить команду npm run dev)
 * php artisan migrate
+* php artisan storage:link
 * Переменовать файл .env.example в .env и правильно его настроить 
 
 ### Основные команды artisan 

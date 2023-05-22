@@ -10,9 +10,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" >
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/mathlive/dist/mathlive-static.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+    <script src="https://unpkg.com/mathlive@0.31.0/dist/mathlive.min.js"></script>
+
 
     <style>
         body { padding-bottom: 100px; }
@@ -23,6 +26,7 @@
 <body>
 <div id="app">
     @include ('layouts.nav')
+    <script src="https://unpkg.com/mathlive"></script>
     @yield('content')
 </div>
 

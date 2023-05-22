@@ -7,5 +7,14 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
+    public function index()
+    {
+        $tasks = Task::all();
+        return view('task.index', compact('tasks'));
+    }
 
+    public function add()
+    {
+        return view('task.addTask');
+    }
 }
