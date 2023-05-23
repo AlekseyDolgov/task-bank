@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Sprav;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SpravController extends Controller
 {
@@ -11,6 +12,10 @@ class SpravController extends Controller
     {
         $sprav = Sprav::all();
         return view('sprav.index', compact('sprav'));
+    }
+
+    public function show($id){
+        return view('sprav.show', ['sprav' => Sprav::findOrFail($id)]);
     }
 
     public function add()

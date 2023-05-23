@@ -34,8 +34,12 @@ Route::get('/add_task', [TaskController::class, 'add'])->name('add_task');
 Route::any('/test', [TestController::class, 'test']); // в этом контроллере можно тестировать методы
 
 Route::get('/sprav', [SpravController::class, 'index']);
+Route::get('sprav/show/{id}', [SpravController::class, 'show']);
 Route::get('/add-sprav', [SpravController::class, 'add']);
 Route::post('/sprav', [SpravController::class, 'store'],);
+
+
+Route::get('show/{id}', 'SpravController@show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
