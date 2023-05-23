@@ -1,20 +1,60 @@
 @extends('layouts.site')
 
 @section('content')
+    <div class="container py-4">
+        <div class="row justify-content-md-center">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="card mb-3">
+                    <div class="card-header">Добавить справочный материал</div>
 
-    <form action="/test" method="post">
-        @csrf
-        <script>
-            const mfe = new MathfieldElement();
-            mfe.value = document.body.appendChild(mfe);
+                    <div class="card-body">
+                        <form method="POST" action="/task" enctype="multipart/form-data">
+                            {{ csrf_field() }}
 
-            // Функция для изменения значения input перед отправкой формы
-            function updateInputValue() {
-                document.getElementById("expression-input").value = mfe.value;
-            }
-        </script>
-        <input type="text" name="test_input" id="expression-input">
-        <button type="submit" onclick="updateInputValue()">отправить</button>
-    </form>
+                            <div class="form-group mb-3">
+                                <label for="title">Название:</label>
+                                <script>
+                                    const mfe = new MathfieldElement();
+                                    mfe.value = document.body.appendChild(mfe);
+
+                                    // Функция для изменения значения input перед отправкой формы
+                                    function updateInputValue() {
+                                        document.getElementById("expression-input").value = mfe.value;
+                                    }
+                                </script>
+                                <input type="text" class="form-control" id="expression-input" name="name"
+                                       value="{{ old('name') }}" required>
+                                <button type="submit" onclick="updateInputValue()">добавить</button>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label for="body">Описание:</label>
+                                <textarea name="description" id="description" class="form-control"
+                                          rows="8" required>{{ old('description') }}</textarea>
+                            </div>
+                            <!-- фото-->
+                            <div class="form-group bmd-form-group is-focused file-input">
+                                <label for="photo">Выберите изображение:</label>
+                                <input type="file" name="img" id="img" class="form-control-file">
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <button type="submit" class="btn btn-primary">Опубликовать</button>
+                            </div>
+
+                            @if (count($errors))
+                                <ul class="alert alert-danger">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            @endif
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 @endsection
