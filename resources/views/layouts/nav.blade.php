@@ -7,6 +7,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#app-navbar-collapse" aria-controls="app-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <a href="/add-task">Добавить категорию</a> ---
         <a href="/add-sprav">Добавить справку</a> ---
         <a href="/sprav">Справочные материалы</a> ---

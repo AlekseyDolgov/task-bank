@@ -38,8 +38,8 @@ Route::get('sprav/show/{id}', [SpravController::class, 'show']);
 Route::get('/add-sprav', [SpravController::class, 'add']);
 Route::post('/sprav', [SpravController::class, 'store'],);
 
-
-Route::get('show/{id}', 'SpravController@show');
+Route::get('/search', 'App\Http\Controllers\SpravController@search')->name('search');
+Route::get('show/{id}', 'App\Http\Controllers\SpravController@search')->name('show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -18,6 +18,13 @@ class SpravController extends Controller
         return view('sprav.show', ['sprav' => Sprav::findOrFail($id)]);
     }
 
+    public function search(Request $request)
+    {
+        $s = $request->s;
+        $sprav = Sprav::where('name', 'LIKE', "%{$s}%")->orderBy('name')->paginate(10);
+        return view('sprav.index', compact('sprav'));
+    }
+
     public function add()
     {
         return view('sprav.addSprav');
