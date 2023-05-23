@@ -22,7 +22,7 @@ class SpravController extends Controller
     {
         $s = $request->s;
         $sprav = Sprav::where('name', 'LIKE', "%{$s}%")->orderBy('name')->paginate(10);
-        return view('sprav.index', compact('sprav'));
+        return view('sprav.search', compact('sprav'));
     }
 
     public function add()
