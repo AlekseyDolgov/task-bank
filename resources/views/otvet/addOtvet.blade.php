@@ -8,7 +8,7 @@
                     <div class="card-header">Добавить справочный материал</div>
 
                     <div class="card-body">
-                        <form method="POST" action="/sprav" enctype="multipart/form-data">
+                        <form method="POST" action="/otvet" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
                             <div class="form-group mb-3">
@@ -28,7 +28,21 @@
                                 <label for="photo">Выберите изображение:</label>
                                 <input type="file" name="img" id="img" class="form-control-file">
                             </div>
-
+                            <div class="form-group mb-3">
+                                <select  id="task-dropdown" class="form-control">
+                                    <option value="">-- Select Task --</option>
+{{--                                    @foreach ($data as $task)--}}
+{{--                                        <option value="{{$task->id}}">--}}
+{{--                                            {{$task->name}}--}}
+{{--                                        </option>--}}
+{{--                                    @endforeach--}}
+                                </select>
+                            </div>
+                            <div>
+                                <label for="check">Статус</label>
+                                <input type="hidden" name="status" value="0" />
+                                <input type="checkbox" id="status" value="1" name="status" checked="checked">
+                            </div>
                             <div class="form-group mb-3">
                                 <button type="submit" class="btn btn-primary">Опубликовать</button>
                             </div>

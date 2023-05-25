@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlockController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\SpravController;
+use \App\Http\Controllers\OtvetController;
 
 
 use App\Http\Controllers\TestController;
@@ -31,15 +32,18 @@ Route::post('/task', [BlockController::class, 'store']);
 Route::get('/tasks/{block}', [TaskController::class, 'index']);
 Route::get('/add_task', [TaskController::class, 'add'])->name('add_task');
 
+Route::get('/add_otvet', [OtvetController::class, 'add'])->name('add_otvet');
+Route::get('/otvet', [OtvetController::class, 'index']);
+
 Route::any('/test', [TestController::class, 'test']); // в этом контроллере можно тестировать методы
 
 Route::get('/sprav', [SpravController::class, 'index']);
 Route::get('sprav/show/{id}', [SpravController::class, 'show']);
 Route::get('/add-sprav', [SpravController::class, 'add']);
-Route::post('/sprav', [SpravController::class, 'store'],);
+Route::post('/sprav', [SpravController::class, 'store']);
 
-Route::get('/search', 'App\Http\Controllers\SpravController@search')->name('search');
-Route::get('show/{id}', 'App\Http\Controllers\SpravController@search')->name('show');
+Route::get('/search', [SpravController::class, 'search'])->name('search');
+Route::get('show/{id}', [SpravController::class, 'show']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
