@@ -12,6 +12,7 @@
         <a href="/add-sprav">Добавить справку</a> ---
         <a href="/sprav">Справочные материалы</a> ---
         <a href="/add_otvet">Решение</a> --- {{-- УБРАТЬ после реализвации последовательного заполнения ---}}
+        <a href="/otvet">Просмотр списка решений</a> --- {{-- УБРАТЬ после реализвации последовательного заполнения ---}}
         <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a> ---
         <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
         <div class="collapse navbar-collapse" id="app-navbar-collapse">

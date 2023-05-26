@@ -16,13 +16,13 @@
                                 <input type="text" class="form-control" id="name" name="name"
                                        value="{{ old('name') }}" required>
                             </div>
-
                             <div class="form-group mb-3">
                                 <label for="body">Описание:</label>
-                                <textarea name="description" id="description" class="form-control"
+                                <textarea name="test_input" id="test_input" class="form-control"
                                           rows="8" required>{{ old('description') }}</textarea>
                                 <math-field></math-field>
                             </div>
+
                             <!-- фото-->
                             <div class="form-group bmd-form-group is-focused file-input">
                                 <label for="photo">Выберите изображение:</label>

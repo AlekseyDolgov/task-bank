@@ -14,7 +14,7 @@
     @forelse  ($sprav->sortByDesc('id') as $row)
         <div class="card-body">
             <table class="table">
-                <td><a href="/sprav/show/{{$row->id}}">{{ $row->name }}</a></td>
+                <td><a href="/sprav/show/{{$row->id}}"> class="card-title">{{ $row->name }}</a></td>>
                 {{--                    <td><p class="card-text">{{ $sprav->description }}</p></td>--}}
             </table>
         </div>
