@@ -5,10 +5,10 @@
         <div class="row justify-content-md-center">
             <div class="col-md-8 col-md-offset-2">
                 <div class="card mb-3">
-                    <div class="card-header">Добавить блок</div>
+                    <div class="card-header">Добавить категорию</div>
 
                     <div class="card-body">
-                        <form method="POST" action="/task" enctype="multipart/form-data">
+                        <form method="POST" action="/block" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
                             <div class="form-group mb-3">

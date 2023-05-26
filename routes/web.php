@@ -26,10 +26,11 @@ use App\Http\Controllers\TestController;
 
 Route::get('/', [BlockController::class, 'index']);
 Route::get('/add-task', [BlockController::class, 'add']);
-Route::post('/task', [BlockController::class, 'store']);
+Route::post('/block', [BlockController::class, 'store']);
 
-Route::get('/tasks/{block}', [TaskController::class, 'index']);
-Route::get('/add_task', [TaskController::class, 'add'])->name('add_task');
+Route::any('/tasks/show', [TaskController::class, 'index']);
+Route::get('/add_task/block', [TaskController::class, 'add'])->name('add_task.block');
+Route::post('/task', [TaskController::class, 'store']);
 
 Route::any('/test', [TestController::class, 'test']); // в этом контроллере можно тестировать методы
 

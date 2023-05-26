@@ -19,7 +19,7 @@
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                         <li><a class="dropdown-item" href="/add-task">Добавить категорию</a></li>
                         <li><a class="dropdown-item" href="/add-sprav">Добавить справку</a></li>
-                        <li><a class="dropdown-item" href="#">Добавить задачу</a></li> {{-- Работает в тестовом режиме (потом убрать) --}}
+                        <li><a class="dropdown-item" href="/add_task">Добавить задачу</a></li> {{-- Работает в тестовом режиме (потом убрать) --}}
                         <li><a class="dropdown-item" href="/add_otvet">Добавить решение</a></li> {{-- Работает в тестовом режиме (потом убрать) --}}
                     </ul>
                 </li>

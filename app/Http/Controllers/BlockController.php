@@ -15,7 +15,7 @@ class BlockController extends Controller
 
     public function add()
     {
-        return view('main.addTask');
+        return view('main.addBlock');
     }
 
     public function store(Request $request)

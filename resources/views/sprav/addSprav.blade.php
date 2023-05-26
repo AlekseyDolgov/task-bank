@@ -18,7 +18,7 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="body">Описание:</label>
-                                <textarea name="test_input" id="test_input" class="form-control"
+                                <textarea name="description" id="test_input" class="form-control"
                                           rows="8" required>{{ old('description') }}</textarea>
                                 <math-field></math-field>
                             </div>

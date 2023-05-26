@@ -5,7 +5,7 @@
         <div class="row justify-content-md-center">
             <div class="col-md-8 col-md-offset-2">
                 <div class="card mb-3">
-                    <div class="card-header">Добавить справочный материал</div>
+                    <div class="card-header">Добавить задание материал</div>
 
                     <div class="card-body">
                         <form method="POST" action="/task" enctype="multipart/form-data">
@@ -13,6 +13,9 @@
 
                             <div class="form-group mb-3">
                                 <label for="title">Название:</label>
+                                <input type="text" class="form-control" name="name">
+
+                                <label for="formula">Формула:</label>
                                 <script>
                                     const mfe = new MathfieldElement();
                                     mfe.value = document.body.appendChild(mfe);
@@ -22,8 +25,10 @@
                                         document.getElementById("expression-input").value = mfe.value;
                                     }
                                 </script>
-                                <input type="text" class="form-control" id="expression-input" name="name"
+                                <input type="text" class="form-control" id="expression-input" name="formula"
                                        value="{{ old('name') }}" required>
+
+
                                 <button type="submit" onclick="updateInputValue()">добавить</button>
                             </div>
 
@@ -32,12 +37,23 @@
                                 <textarea name="description" id="description" class="form-control"
                                           rows="8" required>{{ old('description') }}</textarea>
                             </div>
+                            <label for="sprav_id">Выберите сраночник:</label>
+                            <select  id="task-dropdown" class="form-control" name="sprav_id">
+                                <option value="">-- Select Task --</option>
+                                    @foreach ($spravs as $sprav)
+                                        <option value="{{$sprav->id}}">
+                                            {{$sprav->name}}
+                                        </option>
+                                    @endforeach
+                            </select>
+
                             <!-- фото-->
                             <div class="form-group bmd-form-group is-focused file-input">
-                                <label for="photo">Выберите изображение:</label>
+                                <label for="img">Выберите изображение:</label>
                                 <input type="file" name="img" id="img" class="form-control-file">
                             </div>
 
+                            <input type="hidden" name="block_id" value="{{$_GET['id']}}">
                             <div class="form-group mb-3">
                                 <button type="submit" class="btn btn-primary">Опубликовать</button>
                             </div>

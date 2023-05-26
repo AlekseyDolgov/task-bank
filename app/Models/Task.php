@@ -14,7 +14,7 @@ class Task extends Model
         'name',
         'description',
         'img',
-        'otvet_id',
+        'formula',
         'sprav_id',
         'block_id'
     ];
