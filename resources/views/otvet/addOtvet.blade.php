@@ -9,7 +9,7 @@
 
                     <div class="card-body">
                         <form method="POST" action="/otvet" enctype="multipart/form-data">
-                            {{ csrf_field() }}
+                            @csrf
 
                             <div class="form-group mb-3">
                                 <label for="title">Название:</label>
@@ -25,17 +25,17 @@
                             </div>
                             <!-- фото-->
                             <div class="form-group bmd-form-group is-focused file-input">
-                                <label for="photo">Выберите изображение:</label>
+                                <label for="img">Выберите изображение:</label>
                                 <input type="file" name="img" id="img" class="form-control-file">
                             </div>
                             <div class="form-group mb-3">
-                                <select  id="task-dropdown" class="form-control">
-                                    <option value="">-- Select Task --</option>
-{{--                                    @foreach ($data as $task)--}}
-{{--                                        <option value="{{$task->id}}">--}}
-{{--                                            {{$task->name}}--}}
-{{--                                        </option>--}}
-{{--                                    @endforeach--}}
+                                <select  id="task-dropdown" class="form-control" name="task_id">
+                                    <option value="">-- Задание --</option>
+                                    @foreach ($tasks as $task)
+                                        <option value="{{$task->id}}">
+                                            {{$task->name}}
+                                        </option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div>

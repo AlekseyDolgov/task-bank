@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\blocks;
 use App\Models\Sprav;
 use App\Models\Task;
 use Illuminate\Http\Request;

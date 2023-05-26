@@ -44,6 +44,7 @@ Route::get('show/{id}', [SpravController::class,'show'])->name('show');
 
 Route::get('/add_otvet', [OtvetController::class, 'add']);
 Route::get('/otvet', [OtvetController::class, 'index']);
+Route::post('otvet', [OtvetController::class, 'store']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
