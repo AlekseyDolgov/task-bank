@@ -5,7 +5,7 @@
         <div class="row justify-content-md-center">
             <div class="col-md-8 col-md-offset-2">
                 <div class="card mb-3">
-                    <div class="card-header">Добавить справочный материал</div>
+                    <div class="card-header">Добавить решение</div>
 
                     <div class="card-body">
                         <form method="POST" action="/otvet" enctype="multipart/form-data">

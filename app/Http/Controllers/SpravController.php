@@ -10,8 +10,7 @@ class SpravController extends Controller
 {
     public function index()
     {
-        $sprav = Sprav::all();
-        return view('sprav.index', compact('sprav'));
+        return view('sprav.index', ['sprav' => DB::table('sprav')->paginate(10)]);
     }
 
     public function show($id){
