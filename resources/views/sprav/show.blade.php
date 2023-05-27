@@ -47,7 +47,6 @@
             <div class="header-h1">
                 <h1 class="h2">{{$sprav->name}}</h1>
             </div>
-
             <div class="card-body">
                 <p class="card-text">{{$sprav->description}}</p>
                 <img src="{{asset('storage/'.$sprav->img)}}" class="" style="max-width: 100%; height: auto; margin: 20px 0;">

@@ -8,7 +8,7 @@
                     <div class="card h-100">
                         <img src="{{asset('storage/' . $block->img) }}" class="card-img-top img-fluid aspect-ratio-square @if($block->imageIsSmaller()) img-cover @endif" alt="">
                         <div class="card-body">
-                            <a href="tasks/show?id={{$block->id}}"><h5 class="card-title">{{ $block->name }}</h5></a>
+                            <a href="tasks/index?id={{$block->id}}">{{ $block->name }}</a>
                             <p class="card-text">{{ $block->description }}</p>
                         </div>
                     </div>

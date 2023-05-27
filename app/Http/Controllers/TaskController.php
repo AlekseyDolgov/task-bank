@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Sprav;
 use App\Models\Task;
 use Illuminate\Http\Request;
+use App\Models\Blocks;
+use Illuminate\Support\Facades\DB;
 
 class TaskController extends Controller
 {
@@ -21,6 +23,19 @@ class TaskController extends Controller
         return view('task.addTask', compact('spravs'));
     }
 
+    public function search(Request $request)
+    {
+        $block_id = $request->get('id');
+        $tasks = Task::where('block_id', $block_id)->get();
+        $search = $request->search;
+        $task = Task::where('name', 'LIKE', "%{$search}%")->orderBy('name')->paginate(10);
+        return view('task.searchTask', compact('task', 'tasks'));
+    }
+
+    public function show($id)
+    {
+        return view('task.show', ['task' => Task::findOrFail($id)]);
+    }
 
     public function store(Request $request)
     {

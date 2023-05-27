@@ -28,16 +28,19 @@ Route::get('/', [BlockController::class, 'index']);
 Route::get('/add-task', [BlockController::class, 'add']);
 Route::post('/block', [BlockController::class, 'store']);
 
-Route::any('/tasks/show', [TaskController::class, 'index']);
-Route::get('/add_task/block', [TaskController::class, 'add'])->name('add_task.block');
-Route::post('/task', [TaskController::class, 'store']);
+Route::get('/tasks/index', [TaskController::class, 'index']);
+Route::get('tasks/show/{id}', [TaskController::class, 'show']);
+Route::get('/task/index/addTask', [TaskController::class, 'add'])->name('add_task.block');
+Route::post('/tasks/index', [TaskController::class, 'store']);
+
+Route::get('show/{id}', [TaskController::class, 'show'])->name('showTask');
 
 Route::any('/test', [TestController::class, 'test']); // в этом контроллере можно тестировать методы
 
 Route::get('/sprav', [SpravController::class, 'index']);
 Route::get('sprav/show/{id}', [SpravController::class, 'show']);
 Route::get('/add-sprav', [SpravController::class, 'add']);
-Route::post('/sprav', [SpravController::class, 'store'],);
+Route::post('/sprav', [SpravController::class, 'store']);
 
 Route::get('/search', [SpravController::class, 'search'])->name('search');
 Route::get('show/{id}', [SpravController::class,'show'])->name('show');

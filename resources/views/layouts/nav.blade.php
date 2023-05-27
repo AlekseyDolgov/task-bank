@@ -19,20 +19,17 @@
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                         <li><a class="dropdown-item" href="/add-task">Добавить категорию</a></li>
                         <li><a class="dropdown-item" href="/add-sprav">Добавить справку</a></li>
-                        <li><a class="dropdown-item" href="/add_task">Добавить задачу</a></li> {{-- Работает в тестовом режиме (потом убрать) --}}
-                        <li><a class="dropdown-item" href="/add_otvet">Добавить решение</a></li> {{-- Работает в тестовом режиме (потом убрать) --}}
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-                        Просмотреть
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <li><a class="dropdown-item" href="/sprav">Справочные материалы</a></li>
-                        <li><a class="dropdown-item" href="#">Просмотр списка задач</a></li> {{-- Работает в тестовом режиме (потом убрать) --}}
-                        <li><a class="dropdown-item" href="/otvet">Просмотр списка решений</a></li> {{-- Работает в тестовом режиме (потом убрать) --}}
-                    </ul>
-                </li>
+{{--                <li class="nav-item dropdown">--}}
+{{--                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">--}}
+{{--                        Просмотреть--}}
+{{--                    </a>--}}
+{{--                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">--}}
+{{--                        <li><a class="dropdown-item" href="/sprav">Справочные материалы</a></li>--}}
+{{--                    </ul>--}}
+{{--                </li>--}}
+                <li><a href="/sprav" class="nav-link">Справочные материалы</a></li>
             </ul>
         </div>
         <!-- Button trigger modal -->
