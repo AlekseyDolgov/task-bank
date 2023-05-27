@@ -30,6 +30,7 @@
 {{--                    </ul>--}}
 {{--                </li>--}}
                 <li><a href="/sprav" class="nav-link">Справочные материалы</a></li>
+                <li><a href="/sformirovka-variant-ruhc" class="nav-link">Сформировать вариант</a></li>
             </ul>
         </div>
         <!-- Button trigger modal -->

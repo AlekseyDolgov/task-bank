@@ -14,58 +14,58 @@ return new class extends Migration
         Schema::create('variant', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->bigInteger('block_1')->unsigned();
-            $table->bigInteger('block_2')->unsigned();
-            $table->bigInteger('block_3')->unsigned();
-            $table->bigInteger('block_4')->unsigned();
-            $table->bigInteger('block_5')->unsigned();
-            $table->bigInteger('block_6')->unsigned();
-            $table->bigInteger('block_7')->unsigned();
-            $table->bigInteger('block_8')->unsigned();
-            $table->bigInteger('block_9')->unsigned();
-            $table->bigInteger('block_10')->unsigned();
-            $table->bigInteger('block_11')->unsigned();
-            $table->bigInteger('block_12')->unsigned();
-            $table->bigInteger('block_13')->unsigned();
-            $table->bigInteger('block_14')->unsigned();
-            $table->bigInteger('block_15')->unsigned();
-            $table->bigInteger('block_16')->unsigned();
-            $table->bigInteger('block_17')->unsigned();
+            $table->bigInteger('task_1')->unsigned();
+            $table->bigInteger('task_2')->unsigned();
+            $table->bigInteger('task_3')->unsigned();
+            $table->bigInteger('task_4')->unsigned();
+            $table->bigInteger('task_5')->unsigned();
+            $table->bigInteger('task_6')->unsigned();
+            $table->bigInteger('task_7')->unsigned();
+            $table->bigInteger('task_8')->unsigned();
+            $table->bigInteger('task_9')->unsigned();
+            $table->bigInteger('task_10')->unsigned();
+            $table->bigInteger('task_11')->unsigned();
+            $table->bigInteger('task_12')->unsigned();
+            $table->bigInteger('task_13')->unsigned();
+            $table->bigInteger('task_14')->unsigned();
+            $table->bigInteger('task_15')->unsigned();
+            $table->bigInteger('task_16')->unsigned();
+            $table->bigInteger('task_17')->unsigned();
 
 
-            $table->foreign('block_1')
+            $table->foreign('task_1')
                 ->references('id')->on('task');
-            $table->foreign('block_2')
+            $table->foreign('task_2')
                 ->references('id')->on('task');
-            $table->foreign('block_3')
+            $table->foreign('task_3')
                 ->references('id')->on('task');
-            $table->foreign('block_4')
+            $table->foreign('task_4')
                 ->references('id')->on('task');
-            $table->foreign('block_5')
+            $table->foreign('task_5')
                 ->references('id')->on('task');
-            $table->foreign('block_6')
+            $table->foreign('task_6')
                 ->references('id')->on('task');
-            $table->foreign('block_7')
+            $table->foreign('task_7')
                 ->references('id')->on('task');
-            $table->foreign('block_8')
+            $table->foreign('task_8')
                 ->references('id')->on('task');
-            $table->foreign('block_9')
+            $table->foreign('task_9')
                 ->references('id')->on('task');
-            $table->foreign('block_10')
+            $table->foreign('task_10')
                 ->references('id')->on('task');
-            $table->foreign('block_11')
+            $table->foreign('task_11')
                 ->references('id')->on('task');
-            $table->foreign('block_12')
+            $table->foreign('task_12')
                 ->references('id')->on('task');
-            $table->foreign('block_13')
+            $table->foreign('task_13')
                 ->references('id')->on('task');
-            $table->foreign('block_14')
+            $table->foreign('task_14')
                 ->references('id')->on('task');
-            $table->foreign('block_15')
+            $table->foreign('task_15')
                 ->references('id')->on('task');
-            $table->foreign('block_16')
+            $table->foreign('task_16')
                 ->references('id')->on('task');
-            $table->foreign('block_17')
+            $table->foreign('task_17')
                 ->references('id')->on('task');
             $table->timestamps();
         });

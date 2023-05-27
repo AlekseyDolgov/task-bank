@@ -38,13 +38,13 @@
                                           rows="8" required>{{ old('description') }}</textarea>
                             </div>
                             <label for="sprav_id">Выберите сраночник:</label>
-                            <select  id="task-dropdown" class="form-control" name="sprav_id">
+                            <select id="task-dropdown" class="form-control" name="sprav_id">
                                 <option value="">-- Справочник --</option>
-                                    @foreach ($spravs as $sprav)
-                                        <option value="{{$sprav->id}}">
-                                            {{$sprav->name}}
-                                        </option>
-                                    @endforeach
+                                @foreach ($spravs as $sprav)
+                                    <option value="{{$sprav->id}}">
+                                        {{$sprav->name}}
+                                    </option>
+                                @endforeach
                             </select>
 
                             <!-- фото-->

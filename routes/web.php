@@ -7,6 +7,7 @@ use App\Http\Controllers\BlockController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\SpravController;
 use App\Http\Controllers\OtvetController;
+use App\Http\Controllers\VarianController;
 
 use App\Http\Controllers\TestController;
 /*
@@ -23,6 +24,9 @@ use App\Http\Controllers\TestController;
 //Route::get('/', function () {
 //    return view('main.index');
 //});
+
+Route::get('/sformirovka-variant-ruhc', [VarianController::class, 'index']);
+Route::post('/formirovanie-varianta', [VarianController::class, 'store']);
 
 Route::get('/', [BlockController::class, 'index']);
 Route::get('/add-task', [BlockController::class, 'add']);
