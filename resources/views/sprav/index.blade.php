@@ -18,14 +18,18 @@
                     <th scope="col">№</th>
                     <th scope="col">Заголовок</th>
                     <th scope="col">Описание</th>
+                    <th scope="col">Действия</th>
                 </tr>
                 </thead>
                 <tbody>
                 @forelse  ($sprav->sortByDesc('id') as $row)
                     <tr>
-                        <th scope="row">{{$row->id}}</th>
-                        <td><a href="/sprav/show/{{$row->id}}">{{ $row->name }}</a></td>
+                        <th style="width: 50px" scope="row">{{$row->id}}</th>
+                        <td style="width: 400px"><p class="card-text">{{ $row->name }}</p></td>
                         <td><p class="card-text">{{$row->description}}</p></td>
+                        <td style="width: 300px"><a class="btn btn-outline-danger">Удалить</a> {{--Не работает--}}
+                            <a class="btn btn-outline-info" href="/sprav/show/{{$row->id}}">Просмотр</a>
+                        </td>
                     </tr>
                 @empty
                     <p>Пока что здесь ничего нет.</p>

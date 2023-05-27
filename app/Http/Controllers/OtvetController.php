@@ -29,6 +29,18 @@ class OtvetController extends Controller
         return view('otvet.addOtvet', compact('tasks'));
     }
 
+    public function show($id)
+    {
+        return view('otvet.show', ['otvet' => Otvet::findOrFail($id)]);
+    }
+
+    public function show_otvet(Request $request)
+    {
+        $task_id = $request->get('id');
+        $otvet = Otvet::where('task_id', $task_id)->get();
+        return view('otvet.showOtvet', compact('otvet'));
+    }
+
     public function store(Request $request)
     {
         // проверяет на ошибки
@@ -38,6 +50,7 @@ class OtvetController extends Controller
             'status' => 'required',
             'img' => '|image|mimes:jpg,png,jpeg,gif,svg',
             'task_id' => 'required',
+            'formula' => 'required',
         ]);
 
         $imagePath = $request->file('img')->store('otvet_img', 'public');
@@ -50,6 +63,7 @@ class OtvetController extends Controller
             'status' => $request->status,
             'img' => $imagePath,
             'task_id' => $request->task_id,
+            'formula' => $request->formula,
         ]);
 
         return redirect('otvet');

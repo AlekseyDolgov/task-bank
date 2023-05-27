@@ -24,7 +24,7 @@
         @forelse  ($otvet->sortByDesc('id') as $row)
             <tr>
                 <th scope="row">{{$row->id}}</th>
-                <td><a href="/sprav/show/{{$row->id}}">{{ $row->name }}</a></td>
+                <td><a href="/otvet/show/{{$row->id}}">{{ $row->name }}</a></td>
                 <td><p class="card-text">{{$row->description}}</p></td>
             </tr>
         @empty

@@ -36,6 +36,7 @@ class SpravController extends Controller
             'name' => 'required',
             'description' => 'required',
             'img' => '|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'formula' => 'required',
 
         ]);
 
@@ -47,7 +48,8 @@ class SpravController extends Controller
         $sprav = Sprav::create([
             'name' => $request->name,
             'description' => $request->description,
-            'img' => $imagePath
+            'img' => $imagePath,
+            'formula'=> $request->formula,
         ]);
 
         return redirect('/sprav');

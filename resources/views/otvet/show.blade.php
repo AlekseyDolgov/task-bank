@@ -45,21 +45,23 @@
     <div class="row justify-content-md-center">
         <div class="col-md-8">
             <div class="header-h1">
-                <h1 class="h2">{{$sprav->name}}</h1>
+                <h1 class="h2">{{$otvet->name}}</h1>
             </div>
             <div class="card-body">
-                <p class="card-text">Справка:</p>
-                <p class="card-text">{{$sprav->description}}</p>
+                <p class="card-text">Задача:</p>
+                <p class="card-text">{{$otvet->task_id}}</p>
+                <br>
+                <p class="card-text">Решение:</p>
+                <p class="card-text">{{$otvet->description}}</p>
                 <br>
                 <p class="card-text">Формулы/функции:</p>
-                <p class="card-text">{{$sprav->formula}}</p>
+                <p class="card-text">{{$otvet->formula}}</p>
                 <br>
-                <p class="card-text">Картинка к справке:</p>
-                <img src="{{asset('storage/'.$sprav->img)}}" class="" style="max-width: 100%; height: auto; margin: 20px 0;">
+                <p class="card-text">Картинка к решению:</p>
+                <img src="{{asset('storage/'.$otvet->img)}}" class="" style="max-width: 100%; height: auto; margin: 20px 0;">
             </div>
         </div>
     </div>
 </div>
 </body>
-
 @endsection

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Otvet;
 use App\Models\Sprav;
 use App\Models\Task;
 use Illuminate\Http\Request;
@@ -23,18 +24,24 @@ class TaskController extends Controller
         return view('task.addTask', compact('spravs'));
     }
 
-    public function search(Request $request)
-    {
-        $block_id = $request->get('id');
-        $tasks = Task::where('block_id', $block_id)->get();
-        $search = $request->search;
-        $task = Task::where('name', 'LIKE', "%{$search}%")->orderBy('name')->paginate(10);
-        return view('task.searchTask', compact('task', 'tasks'));
-    }
 
     public function show($id)
     {
         return view('task.show', ['task' => Task::findOrFail($id)]);
+    }
+
+//    public function show_otvet(Request $request)
+//    {
+//        $tasks = DB::table('task')->select('id')->get();
+//        $otvet = Otvet::where('task_id', $tasks)->get();
+//        return view('task.showOtvet', compact('otvet'));
+//    }
+
+    public function show_sprav(Request $request)
+    {
+        $sprav_id = $request->get('id');
+        $tasks = Task::where('sprav_id', $sprav_id)->get();
+        return view('sprav.showSprav', compact('tasks'));
     }
 
     public function store(Request $request)

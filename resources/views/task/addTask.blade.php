@@ -39,7 +39,7 @@
                             </div>
                             <label for="sprav_id">Выберите сраночник:</label>
                             <select  id="task-dropdown" class="form-control" name="sprav_id">
-                                <option value="">-- Select Task --</option>
+                                <option value="">-- Справочник --</option>
                                     @foreach ($spravs as $sprav)
                                         <option value="{{$sprav->id}}">
                                             {{$sprav->name}}

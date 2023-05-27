@@ -10,14 +10,19 @@
                         <th scope="col">№</th>
                         <th scope="col">Заголовок</th>
                         <th scope="col">Описание</th>
+                        <th scope="col">Действия</th>
                     </tr>
                     </thead>
                     <tbody>
                     @forelse  ($tasks->sortByDesc('id') as $row)
                         <tr>
-                            <th scope="row">{{$row->id}}</th>
-                            <td><a href="/tasks/show/{{$row->id}}">{{ $row->name }}</a></td>
-                            <td><p class="card-text">{{$row->description}}</p></td>
+                            <th style="width: 50px" scope="row">{{$row->id}}</th>
+                            <td><p class="card-text">{{ $row->name }}</p></td>
+                            <td><p style="width: 300px" class="card-text">{{$row->description}}</p></td>
+                            <td style="width: 400px"><a class="btn btn-outline-warning" href="{{route('addOtvet')}}">Добавить решение</a>
+                                <a class="btn btn-outline-danger">Удалить</a> {{--Не работает--}}
+                                <a class="btn btn-outline-info" href="/tasks/show/{{$row->id}}">Просмотр</a>
+                            </td>
                         </tr>
                     @empty
                         <p>Пока что здесь ничего нет.</p>

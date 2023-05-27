@@ -21,7 +21,21 @@
                                 <label for="body">Описание:</label>
                                 <textarea name="description" id="description" class="form-control"
                                           rows="8" required>{{ old('description') }}</textarea>
-                                <math-field></math-field>
+                                <label for="formula">Формула:</label>
+                                <script>
+                                    const mfe = new MathfieldElement();
+                                    mfe.value = document.body.appendChild(mfe);
+
+                                    // Функция для изменения значения input перед отправкой формы
+                                    function updateInputValue() {
+                                        document.getElementById("expression-input").value = mfe.value;
+                                    }
+                                </script>
+                                <input type="text" class="form-control" id="expression-input" name="formula"
+                                       value="{{ old('name') }}" required>
+
+
+                                <button type="submit" onclick="updateInputValue()">Добавить</button>
                             </div>
                             <!-- фото-->
                             <div class="form-group bmd-form-group is-focused file-input">
@@ -38,10 +52,10 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div>
-                                <label for="check">Статус</label>
-                                <input type="hidden" name="status" value="0" />
-                                <input type="checkbox" id="status" value="1" name="status" checked="checked">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" value="0" name="status" type="hidden" checked>
+                                <input class="form-check-input" value="1" name="status" type="checkbox" id="status" checked="checked">
+                                <label class="form-check-label" for="flexSwitchCheckChecked">Статус</label>
                             </div>
                             <div class="form-group mb-3">
                                 <button type="submit" class="btn btn-primary">Опубликовать</button>

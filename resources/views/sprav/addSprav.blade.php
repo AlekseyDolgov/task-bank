@@ -20,7 +20,21 @@
                                 <label for="body">Описание:</label>
                                 <textarea name="description" id="test_input" class="form-control"
                                           rows="8" required>{{ old('description') }}</textarea>
-                                <math-field></math-field>
+                                <label for="formula">Формула:</label>
+                                <script>
+                                    const mfe = new MathfieldElement();
+                                    mfe.value = document.body.appendChild(mfe);
+
+                                    // Функция для изменения значения input перед отправкой формы
+                                    function updateInputValue() {
+                                        document.getElementById("expression-input").value = mfe.value;
+                                    }
+                                </script>
+                                <input type="text" class="form-control" id="expression-input" name="formula"
+                                       value="{{ old('name') }}" required>
+
+
+                                <button type="submit" onclick="updateInputValue()">Добавить</button>
                             </div>
 
                             <!-- фото-->

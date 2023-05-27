@@ -64,6 +64,10 @@
                 <p class="card-text">Картинка к задаче:</p>
                 <img src="{{asset('storage/'.$task->img)}}" class="" style="max-width: 100%; height: auto; margin: 20px 0;">
             </div>
+            <div>
+                <a class="btn btn-outline-success" href="/otvet/showOtvet/{{$task->id}}">Решение</a>
+                <a class="btn btn-outline-warning" href="{{route('showSprav')}}">Справочник</a>
+            </div>
 {{--            Условие: {{$task->description}} <br><br>--}}
 {{--            <img src="{{asset('storage/'.$task->img)}}" class="" style="max-width: 100%; height: auto; margin: 20px 0;">--}}
             </div>
