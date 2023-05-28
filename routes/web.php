@@ -39,6 +39,7 @@ Route::get('tasks/show/{id}', [TaskController::class, 'show']);
 Route::get('/task/index/addTask', [TaskController::class, 'add'])->name('add_task.block');
 Route::get('/sprav/showSprav', [TaskController::class, 'show_sprav'])->name('showSprav');
 Route::get('show/{id}', [TaskController::class, 'show'])->name('showTask');
+Route::get('/task/show/{id}/del', [TaskController::class, 'del']);
 Route::post('/tasks/index', [TaskController::class, 'store']);
 
 Route::any('/test', [TestController::class, 'test']); // в этом контроллере можно тестировать методы

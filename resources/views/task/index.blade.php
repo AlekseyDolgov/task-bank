@@ -20,7 +20,6 @@
                             <td><p class="card-text">{{ $row->name }}</p></td>
                             <td><p style="width: 300px" class="card-text">{{$row->description}}</p></td>
                             <td style="width: 400px"><a class="btn btn-outline-warning" href="{{route('addOtvet')}}">Добавить решение</a>
-                                <a class="btn btn-outline-danger">Удалить</a> {{--Не работает--}}
                                 <a class="btn btn-outline-info" href="/tasks/show/{{$row->id}}">Просмотр</a>
                             </td>
                         </tr>

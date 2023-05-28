@@ -67,6 +67,7 @@
             <div>
                 <a class="btn btn-outline-success" href="/otvet/showOtvet/{{$task->id}}">Решение</a>
                 <a class="btn btn-outline-warning" href="{{route('showSprav')}}">Справочник</a>
+                <a class="btn btn-outline-danger" href="/task/show/{{$task->id}}/del">Удалить</a>
             </div>
 {{--            Условие: {{$task->description}} <br><br>--}}
 {{--            <img src="{{asset('storage/'.$task->img)}}" class="" style="max-width: 100%; height: auto; margin: 20px 0;">--}}

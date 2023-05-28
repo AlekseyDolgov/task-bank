@@ -24,6 +24,12 @@ class TaskController extends Controller
         return view('task.addTask', compact('spravs'));
     }
 
+    public function del($id)
+    {
+        Task::find($id)->delete();
+        $blosks = Blocks::all();
+        return view('main.index', compact('blosks'));
+    }
 
     public function show($id)
     {
