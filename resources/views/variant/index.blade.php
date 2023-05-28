@@ -15,7 +15,7 @@
                                    value="{{ old('name') }}" required>
                             ===
 
-                            <label for="sprav_id">Выберите сраночник:</label>
+                            <label for="sprav_id">Выберите задачу из каждого блока:</label>
 
 
                             <select id="task-dropdown-1" class="form-control" name="task_1">
@@ -217,7 +217,7 @@
 
 {{--                            <input type="hidden" name="block_id" value="{{$_GET['id']}}">--}}
                             <div class="form-group mb-3">
-                                <button type="submit" class="btn btn-primary">Опубликовать</button>
+                                <button type="submit" class="btn btn-primary">Сформировать</button>
                             </div>
 
                             @if (count($errors))

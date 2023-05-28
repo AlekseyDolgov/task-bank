@@ -29,8 +29,17 @@
 {{--                        <li><a class="dropdown-item" href="/sprav">Справочные материалы</a></li>--}}
 {{--                    </ul>--}}
 {{--                </li>--}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                        Сформировать вариант
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li><a href="/sformirovka-variant-auto" class="nav-link">Автоматически</a></li>
+                        <li><a href="/sformirovka-variant-ruhc" class="nav-link">Вручную</a></li>
+                    </ul>
+                </li>
                 <li><a href="/sprav" class="nav-link">Справочные материалы</a></li>
-                <li><a href="/sformirovka-variant-ruhc" class="nav-link">Сформировать вариант</a></li>
+
             </ul>
         </div>
         <!-- Button trigger modal -->
