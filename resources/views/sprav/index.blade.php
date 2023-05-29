@@ -27,7 +27,7 @@
                         <th style="width: 50px" scope="row">{{$row->id}}</th>
                         <td style="width: 400px"><p class="card-text">{{ $row->name }}</p></td>
                         <td><p class="card-text">{{$row->description}}</p></td>
-                        <td style="width: 300px"><a class="btn btn-outline-danger">Удалить</a> {{--Не работает--}}
+                        <td style="width: 100px">
                             <a class="btn btn-outline-info" href="/sprav/show/{{$row->id}}">Просмотр</a>
                         </td>
                     </tr>

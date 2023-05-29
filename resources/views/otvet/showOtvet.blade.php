@@ -16,7 +16,7 @@
             <th style="width: 50px" scope="row">{{$row->id}}</th>
             <td><p class="card-text">{{ $row->name }}</p></td>
             <td><p style="width: 300px" class="card-text">{{$row->description}}</p></td>
-            <td style="width: 400px"><a class="btn btn-outline-danger">Удалить</a> {{--Не работает--}}
+            <td style="width: 200px">
                 <a class="btn btn-outline-info" href="/otvet/show/{{$row->id}}">Просмотр</a>
             </td>
         </tr>

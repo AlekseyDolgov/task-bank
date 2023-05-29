@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sprav;
+use App\Models\Blocks;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -27,6 +28,13 @@ class SpravController extends Controller
     public function add()
     {
         return view('sprav.addSprav');
+    }
+
+    public function del($id)
+    {
+        Sprav::find($id)->delete();
+        $blosks = Blocks::all();
+        return view('main.index', compact('blosks'));
     }
 
     public function store(Request $request)

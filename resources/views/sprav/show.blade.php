@@ -53,9 +53,12 @@
                 <br>
                 <p class="card-text">Формулы/функции:</p>
                 <p class="card-text">{{$sprav->formula}}</p>
+                <math-field></math-field>
                 <br>
                 <p class="card-text">Картинка к справке:</p>
                 <img src="{{asset('storage/'.$sprav->img)}}" class="" style="max-width: 100%; height: auto; margin: 20px 0;">
+                <br>
+                <a class="btn btn-outline-danger" href="/sprav/show/{{$sprav->id}}/del">Удалить</a>
             </div>
         </div>
     </div>

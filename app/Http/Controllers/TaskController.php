@@ -36,19 +36,12 @@ class TaskController extends Controller
         return view('task.show', ['task' => Task::findOrFail($id)]);
     }
 
-//    public function show_otvet(Request $request)
+//    public function show_sprav(Request $request)
 //    {
-//        $tasks = DB::table('task')->select('id')->get();
-//        $otvet = Otvet::where('task_id', $tasks)->get();
-//        return view('task.showOtvet', compact('otvet'));
+//        $spravs = DB::table('sprav');
+//        $tasks = Task::where('sprav_id', $spravs)->get();
+//        return view('task.showSprav', compact('tasks'));
 //    }
-
-    public function show_sprav(Request $request)
-    {
-        $sprav_id = $request->get('id');
-        $tasks = Task::where('sprav_id', $sprav_id)->get();
-        return view('sprav.showSprav', compact('tasks'));
-    }
 
     public function store(Request $request)
     {

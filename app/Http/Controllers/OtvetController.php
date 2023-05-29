@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Otvet;
+use App\Models\Blocks;
 use App\Models\Task;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
@@ -39,6 +40,13 @@ class OtvetController extends Controller
         $task_id = $request->get('id');
         $otvet = Otvet::where('task_id', $task_id)->get();
         return view('otvet.showOtvet', compact('otvet'));
+    }
+
+    public function del($id)
+    {
+        Otvet::find($id)->delete();
+        $blosks = Blocks::all();
+        return view('main.index', compact('blosks'));
     }
 
     public function store(Request $request)

@@ -56,9 +56,12 @@
                 <br>
                 <p class="card-text">Формулы/функции:</p>
                 <p class="card-text">{{$otvet->formula}}</p>
+                <math-field></math-field>
                 <br>
                 <p class="card-text">Картинка к решению:</p>
                 <img src="{{asset('storage/'.$otvet->img)}}" class="" style="max-width: 100%; height: auto; margin: 20px 0;">
+                <br>
+                <a class="btn btn-outline-danger" href="/otvet/show/{{$otvet->id}}/del">Удалить</a>
             </div>
         </div>
     </div>

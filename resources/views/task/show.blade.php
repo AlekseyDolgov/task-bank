@@ -56,19 +56,33 @@
                 <p class="card-text">Формулы/функции:</p>
                 <p class="card-text">{{$task->formula}}</p>
                 <br>
-{{--                <script>--}}
-{{--                    const mfe = new MathfieldElement();--}}
-{{--                    mfe.value = '{{$task->formula}}';--}}
-{{--                    document.body.appendChild(mfe);--}}
-{{--                </script>--}}
+                <math-field></math-field>
+{{--                <p><script>--}}
+{{--                        const mfe = new MathfieldElement();--}}
+{{--                        mfe.value = '{{$task->formula}}';--}}
+{{--                        document.body.appendChild(mfe);--}}
+{{--                    </script></p>--}}
                 <p class="card-text">Картинка к задаче:</p>
                 <img src="{{asset('storage/'.$task->img)}}" class="" style="max-width: 100%; height: auto; margin: 20px 0;">
             </div>
             <div>
-                <a class="btn btn-outline-success" href="/otvet/showOtvet/{{$task->id}}">Решение</a>
-                <a class="btn btn-outline-warning" href="{{route('showSprav')}}">Справочник</a>
+                <a class="btn btn-outline-success" href="/otvet/showOtvet?id={{$task->id}}">Решение</a>
                 <a class="btn btn-outline-danger" href="/task/show/{{$task->id}}/del">Удалить</a>
             </div>
+            <table class="table table-bordered table-striped">
+                <thead class="table-dark">
+                <tr>
+                    <th>№</th>
+                    <th>Действие</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th style="width: 50px" scope="row">{{$task->sprav_id}}</th>
+                    <td style="width: 20px"><a class="btn btn-outline-info" href="/sprav/show/{{$task->sprav_id}}">Просмотр</a></td>
+                </tr>
+                </tbody>
+            </table>
 {{--            Условие: {{$task->description}} <br><br>--}}
 {{--            <img src="{{asset('storage/'.$task->img)}}" class="" style="max-width: 100%; height: auto; margin: 20px 0;">--}}
             </div>
