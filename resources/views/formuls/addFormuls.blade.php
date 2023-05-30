@@ -8,22 +8,23 @@
                     <div class="card-header">Добавить справочный материал</div>
 
                     <div class="card-body">
-                        <form method="POST" action="/sprav" enctype="multipart/form-data">
+                        <form method="POST" action="/formul" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
                             <div class="form-group mb-3">
-                                <label for="title">Название:</label>
-                                <input type="text" class="form-control" id="name" name="name"
+                                <label for="formula">Формула:</label>
+                                <script>
+                                    const mfe = new MathfieldElement();
+                                    mfe.value = document.body.appendChild(mfe);
+                                    // Функция для изменения значения input перед отправкой формы
+                                    function updateInputValue() {
+                                        document.getElementById("expression-input").value = mfe.value;
+                                    }
+                                </script>
+                                <input type="text" class="form-control" id="expression-input" name="name"
                                        value="{{ old('name') }}" required>
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="body">Описание:</label>
-                                <textarea name="description" id="test_input" class="form-control"
-                                          rows="8" required>{{ old('description') }}</textarea>
-                            <!-- фото-->
-                            <div class="form-group bmd-form-group is-focused file-input">
-                                <label for="photo">Выберите изображение:</label>
-                                <input type="file" name="img" id="img" class="form-control-file">
+
+                                <button type="submit" onclick="updateInputValue()">Добавить</button>
                             </div>
 
                             <div class="form-group mb-3">

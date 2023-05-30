@@ -48,7 +48,6 @@ class TaskController extends Controller
         // проверяет на ошибки
         $this->validate($request, [
             'name' => 'required',
-            'formula' => 'required',
             'description' => 'required',
             'img' => '|image|mimes:jpg,png,jpeg,gif,svg',
             'sprav_id' => 'required',
@@ -62,7 +61,6 @@ class TaskController extends Controller
             'name' => $request->name,
             'description' => $request->description,
             'img' => $imagePath,
-            'formula' => $request->formula,
             'block_id' => $request->block_id,
             'sprav_id' => $request->sprav_id,
         ]);

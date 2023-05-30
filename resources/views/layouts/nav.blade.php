@@ -21,14 +21,6 @@
                         <li><a class="dropdown-item" href="/add-sprav">Добавить справку</a></li>
                     </ul>
                 </li>
-{{--                <li class="nav-item dropdown">--}}
-{{--                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">--}}
-{{--                        Просмотреть--}}
-{{--                    </a>--}}
-{{--                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">--}}
-{{--                        <li><a class="dropdown-item" href="/sprav">Справочные материалы</a></li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
                         Сформировать вариант

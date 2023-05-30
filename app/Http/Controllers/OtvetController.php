@@ -58,7 +58,6 @@ class OtvetController extends Controller
             'status' => 'required',
             'img' => '|image|mimes:jpg,png,jpeg,gif,svg',
             'task_id' => 'required',
-            'formula' => 'required',
         ]);
 
         $imagePath = $request->file('img')->store('otvet_img', 'public');
@@ -71,7 +70,6 @@ class OtvetController extends Controller
             'status' => $request->status,
             'img' => $imagePath,
             'task_id' => $request->task_id,
-            'formula' => $request->formula,
         ]);
 
         return redirect('otvet');

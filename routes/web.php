@@ -8,6 +8,7 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\SpravController;
 use App\Http\Controllers\OtvetController;
 use App\Http\Controllers\VarianController;
+use App\Http\Controllers\FormulsController;
 
 use App\Http\Controllers\TestController;
 /*
@@ -37,7 +38,6 @@ Route::post('/block', [BlockController::class, 'store']);
 Route::get('/tasks/index', [TaskController::class, 'index']);
 Route::get('tasks/show/{id}', [TaskController::class, 'show']);
 Route::get('/task/index/addTask', [TaskController::class, 'add'])->name('add_task.block');
-//Route::get('/task/showSprav/{id}', [TaskController::class, 'show_sprav'])->name('showSprav');
 Route::get('show/{id}', [TaskController::class, 'show'])->name('showTask');
 Route::get('/task/show/{id}/del', [TaskController::class, 'del']);
 Route::post('/tasks/index', [TaskController::class, 'store']);
@@ -62,6 +62,12 @@ Route::get('/otvet/showOtvet', [OtvetController::class, 'show_otvet'])->name('sh
 Route::get('otvet/show/{id}', [OtvetController::class, 'show']);
 Route::post('otvet', [OtvetController::class, 'store']);
 
+Route::get('formuls/index', [FormulsController::class, 'index']);
+Route::get('formuls/addFormuls', [FormulsController::class, 'add']);
+Route::get('formuls/addOtvetF', [FormulsController::class, 'add_otvet']);
+Route::get('formuls/addSpravF', [FormulsController::class, 'add_sprav']);
+Route::get('formuls/addTaskF', [FormulsController::class, 'add_task']);
+Route::post('formuls/index', [FormulsController::class, 'store']);
 
 
 Route::middleware('auth')->group(function () {

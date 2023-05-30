@@ -17,6 +17,5 @@ class Otvet extends Model
         'img',
         'status',
         'task_id',
-        'formula',
     ];
 }

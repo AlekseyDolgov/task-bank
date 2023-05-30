@@ -5,18 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Task extends Model
+class Formuls extends Model
 {
     use HasFactory;
 
-    protected $table = 'task';
+    protected $table = 'formuls';
+
     protected $fillable = [
         'name',
-        'description',
-        'img',
-        'sprav_id',
-        'block_id'
     ];
-
-
 }

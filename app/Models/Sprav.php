@@ -15,7 +15,6 @@ class Sprav extends Model
         'name',
         'description',
         'img',
-        'formula',
     ];
 
     public function imageIsSmaller()

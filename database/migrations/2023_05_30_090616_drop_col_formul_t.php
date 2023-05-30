@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('table_task_formuls', function (Blueprint $table) {
-            $table->id();
-            $table->bigInteger('task_id')->unsigned();
-            $table->foreign('task_id')
-                ->references('id')->on('task')->onDelete('cascade');
-            $table->timestamps();
+        Schema::table('task', function (Blueprint $table){
+            $table->dropColumn('formula');
         });
     }
 
@@ -25,6 +21,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('table_task_formuls');
+        //
     }
 };
