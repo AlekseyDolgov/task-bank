@@ -67,12 +67,7 @@
                 </div>
             </div>
         </div>
-        <div class="collapse navbar-collapse float-right" id="app-navbar-collapse">
-            <ul class="navbar-nav">
-                <li><a href="{{ route('login') }}" class="nav-link">Вход</a></li>
-                <li><a href="{{ route('register') }}" class="nav-link">Регистрация</a></li>
-            </ul>
-        </div>
+
     </div>
     @if (Route::has('login'))
         <div class="collapse navbar-collapse float-right" id="app-navbar-collapse">
