@@ -69,12 +69,19 @@ Route::get('/otvet/showOtvet', [OtvetController::class, 'show_otvet'])->name('sh
 Route::get('otvet/show/{id}', [OtvetController::class, 'show']);
 Route::post('otvet', [OtvetController::class, 'store']);
 
-Route::get('formuls/index', [FormulsController::class, 'index']);
+Route::get('formuls', [FormulsController::class, 'index']);
 Route::get('formuls/addFormuls', [FormulsController::class, 'add']);
 Route::get('formuls/addOtvetF', [FormulsController::class, 'add_otvet']);
 Route::get('formuls/addSpravF', [FormulsController::class, 'add_sprav']);
 Route::get('formuls/addTaskF', [FormulsController::class, 'add_task']);
-Route::post('formuls/index', [FormulsController::class, 'store']);
+Route::get('formuls/indexTaskF', [FormulsController::class, 'index_task_f']);
+Route::get('formuls/indexSpravF', [FormulsController::class, 'index_sprav_f']);
+Route::get('formuls/indexOtvetF', [FormulsController::class, 'index_otvet_f']);
+Route::get('task/show/showTask', [FormulsController::class, 'show_task']);
+Route::post('formuls', [FormulsController::class, 'store']);
+Route::post('formuls/indexOtvetF', [FormulsController::class, 'store_o']);
+Route::post('formuls/indexSpravF', [FormulsController::class, 'store_s']);
+Route::post('formuls/indexTaskF', [FormulsController::class, 'store_t']);
 
 
 Route::middleware('auth')->group(function () {

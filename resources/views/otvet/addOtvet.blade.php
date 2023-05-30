@@ -10,32 +10,15 @@
                     <div class="card-body">
                         <form method="POST" action="/otvet" enctype="multipart/form-data">
                             @csrf
-
                             <div class="form-group mb-3">
                                 <label for="title">Название:</label>
                                 <input type="text" class="form-control" id="name" name="name"
                                        value="{{ old('name') }}" required>
                             </div>
-
                             <div class="form-group mb-3">
                                 <label for="body">Описание:</label>
                                 <textarea name="description" id="description" class="form-control"
                                           rows="8" required>{{ old('description') }}</textarea>
-                                <label for="formula">Формула:</label>
-                                <script>
-                                    const mfe = new MathfieldElement();
-                                    mfe.value = document.body.appendChild(mfe);
-
-                                    // Функция для изменения значения input перед отправкой формы
-                                    function updateInputValue() {
-                                        document.getElementById("expression-input").value = mfe.value;
-                                    }
-                                </script>
-                                <input type="text" class="form-control" id="expression-input" name="formula"
-                                       value="{{ old('name') }}" required>
-
-
-                                <button type="submit" onclick="updateInputValue()">Добавить</button>
                             </div>
                             <!-- фото-->
                             <div class="form-group bmd-form-group is-focused file-input">

@@ -53,6 +53,24 @@
                 <p class="card-text">Условие:</p>
                 <p class="card-text">{{$task->description}}</p>
                 <br>
+{{--                <table class="table table-bordered table-striped">--}}
+{{--                    <thead class="table-dark">--}}
+{{--                    <tr>--}}
+{{--                        <th scope="col">№</th>--}}
+{{--                        <th scope="col">Заголовок</th>--}}
+{{--                        <th scope="col">Расшифратор</th>--}}
+{{--                    </tr>--}}
+{{--                    </thead>--}}
+{{--                    <tbody>--}}
+{{--                    @foreach ($formuls->sortByDesc('id') as $row)--}}
+{{--                        <tr>--}}
+{{--                            <th style="width: 50px" scope="row">{{$row->id}}</th>--}}
+{{--                            <td><p class="card-text">{{ $row->name }}</p></td>--}}
+{{--                            <td><math-field></math-field></td>--}}
+{{--                        </tr>--}}
+{{--                    @endforeach--}}
+{{--                    </tbody>--}}
+{{--                </table>--}}
                 <p class="card-text">Формулы/функции:</p>
                 <p class="card-text">{{$task->formula}}</p>
                 <br>
@@ -67,6 +85,7 @@
             </div>
             <div>
                 <a class="btn btn-outline-success" href="/otvet/showOtvet?id={{$task->id}}">Решение</a>
+                <a class="btn btn-outline-info" href="/task/show/showTask?id={{$task->id}}">Формулы</a>
                 <a class="btn btn-outline-danger" href="/task/show/{{$task->id}}/del">Удалить</a>
             </div>
             <table class="table table-bordered table-striped">

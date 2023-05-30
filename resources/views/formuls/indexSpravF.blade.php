@@ -7,16 +7,16 @@
                 <thead class="table-dark">
                 <tr>
                     <th scope="col">№</th>
-                    <th scope="col">Заголовок</th>
-                    <th scope="col">Расшифратор</th>
+                    <th scope="col">Формулы</th>
+                    <th scope="col">Справочники</th>
                 </tr>
                 </thead>
                 <tbody>
-                @forelse  ($formuls->sortByDesc('id') as $row)
+                @forelse  ($sf->sortByDesc('id') as $row)
                     <tr>
                         <th style="width: 50px" scope="row">{{$row->id}}</th>
-                        <td><p class="card-text">{{ $row->name }}</p></td>
-                        <td><math-field></math-field></td>
+                        <td><p class="card-text">{{ $row->formul_id }}</p></td>
+                        <td><p class="card-text">{{$row->sparv_id}}</p></td>
                     </tr>
                 @empty
                     <p>Пока что здесь ничего нет.</p>

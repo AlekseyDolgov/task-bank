@@ -8,29 +8,28 @@
                     <div class="card-header link-secondary">Добавить формулу к ответу</div>
 
                     <div class="card-body">
-                        <form method="POST" action="/?????????" enctype="multipart/form-data">
+                        <form method="POST" action="/formuls/indexOtvetF" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
-                            <div class="form-group mb-3">
-                                <label for="sprav_id">Выберите формулу:</label>
-                                <select id="task-dropdown" class="form-control" name="sprav_id">
-                                    <option value="">-- Формулы --</option>
-                                    @foreach ($formuls as $formul)
-                                        <option value="{{$formul->id}}">
-                                            {{$formul->name}}
-                                        </option>
-                                    @endforeach
-                                </select>
-
-                                <label for="sprav_id">Выберите сраночник:</label>
-                                <select id="task-dropdown" class="form-control" name="sprav_id">
-                                    <option value="">-- Справочники --</option>
+                                <label for="otvet_id">Выберите решение:</label>
+                                <select id="task-dropdown" class="form-control" name="otvet_id">
+                                    <option value="">-- Решения --</option>
                                     @foreach ($otvets as $otvet)
                                         <option value="{{$otvet->id}}">
                                             {{$otvet->name}}
                                         </option>
                                     @endforeach
                                 </select>
+                                <div class="form-group mb-3">
+                                    <label for="formul_id">Выберите формулу:</label>
+                                    <select id="task-dropdown" class="form-control" name="formul_id">
+                                        <option value="">-- Формулы --</option>
+                                        @foreach ($formuls as $formul)
+                                            <option value="{{$formul->id}}">
+                                                {{$formul->name}}
+                                            </option>
+                                        @endforeach
+                                    </select>
                                 <div class="form-group mb-3">
                                     <button type="submit" class="btn btn-primary">Опубликовать</button>
                                 </div>
@@ -43,7 +42,6 @@
                                     </ul>
                             @endif
                         </form>
-
                     </div>
                 </div>
             </div>

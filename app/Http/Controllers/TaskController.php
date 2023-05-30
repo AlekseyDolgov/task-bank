@@ -36,13 +36,6 @@ class TaskController extends Controller
         return view('task.show', ['task' => Task::findOrFail($id)]);
     }
 
-//    public function show_sprav(Request $request)
-//    {
-//        $spravs = DB::table('sprav');
-//        $tasks = Task::where('sprav_id', $spravs)->get();
-//        return view('task.showSprav', compact('tasks'));
-//    }
-
     public function store(Request $request)
     {
         // проверяет на ошибки

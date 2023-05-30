@@ -26,8 +26,19 @@
                         Сформировать вариант
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <li><a href="/sformirovka-variant-auto" class="nav-link">Автоматически</a></li>
-                        <li><a href="/sformirovka-variant-ruhc" class="nav-link">Вручную</a></li>
+                        <li><a href="/sformirovka-variant-auto" class="dropdown-item">Автоматически</a></li>
+                        <li><a href="/sformirovka-variant-ruhc" class="dropdown-item">Вручную</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                        Формулы
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li><a href="/formuls/addFormuls" class="dropdown-item">Добавить формулу</a></li>
+                        <li><a href="formuls/addTaskF" class="dropdown-item">Добавить формулу к задаче</a></li>
+                        <li><a href="formuls/addOtvetF" class="dropdown-item">Добавить формулу к ответу</a></li>
+                        <li><a href="formuls/addSpravF" class="dropdown-item">Добавить формулу к справочнику</a></li>
                     </ul>
                 </li>
                 <li><a href="/sprav" class="nav-link">Справочные материалы</a></li>

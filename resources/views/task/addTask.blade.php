@@ -14,24 +14,7 @@
                             <div class="form-group mb-3">
                                 <label for="title">Название:</label>
                                 <input type="text" class="form-control" name="name">
-
-                                <label for="formula">Формула:</label>
-                                <script>
-                                    const mfe = new MathfieldElement();
-                                    mfe.value = document.body.appendChild(mfe);
-
-                                    // Функция для изменения значения input перед отправкой формы
-                                    function updateInputValue() {
-                                        document.getElementById("expression-input").value = mfe.value;
-                                    }
-                                </script>
-                                <input type="text" class="form-control" id="expression-input" name="formula"
-                                       value="{{ old('name') }}" required>
-
-
-                                <button type="submit" onclick="updateInputValue()">добавить</button>
                             </div>
-
                             <div class="form-group mb-3">
                                 <label for="body">Описание:</label>
                                 <textarea name="description" id="description" class="form-control"
