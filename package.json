@@ -16,6 +16,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "mathlive": "^0.94.6",
         "select2": "^4.1.0-rc.0"
     }
 }

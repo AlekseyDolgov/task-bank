@@ -29,8 +29,13 @@
     @include ('layouts.nav')
     <script src="https://unpkg.com/mathlive"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
     @yield('content')
+
+
 </div>
+
+
 
 </body>
 </html>

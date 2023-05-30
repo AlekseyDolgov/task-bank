@@ -8,7 +8,6 @@ class TestController extends Controller
 {
     public function test(Request $request)
     {
-        $test = $request->test_input;
-        return view('sprav.addSprav', compact('test'));
+
     }
 }

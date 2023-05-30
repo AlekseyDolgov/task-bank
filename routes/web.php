@@ -31,6 +31,13 @@ Route::post('/formirovanie-varianta', [VarianController::class, 'store']);
 
 Route::get('/sformirovka-variant-auto', [VarianController::class, 'auto']);
 
+// НЕ ТРОГАТЬ
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/test', function () {
+        return view('test');
+    });
+});
+
 Route::get('/', [BlockController::class, 'index']);
 Route::get('/add-task', [BlockController::class, 'add']);
 Route::post('/block', [BlockController::class, 'store']);
