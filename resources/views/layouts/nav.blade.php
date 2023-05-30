@@ -74,8 +74,22 @@
             </ul>
         </div>
     </div>
-</nav>
+    @if (Route::has('login'))
+        <div class="collapse navbar-collapse float-right" id="app-navbar-collapse">
+            <ul class="navbar-nav">
+            @auth
+                <li><a href="{{ url('/dashboard') }}" class="nav-link">Моя страница</a></li>
+            @else
+                    <li><a href="{{ route('login') }}" class="nav-link">Вход</a></li>
 
+                @if (Route::has('register'))
+                        <li><a href="{{ route('register') }}" class="nav-link">Регистрация</a></li>
+            </ul>
+                @endif
+            @endauth
+        </div>
+    @endif
+</nav>
 {{--Для Саши--}}
 
 {{--<!-- Right Side Of Navbar -->--}}
