@@ -22,9 +22,9 @@ return new class extends Migration
             $table->foreign('otvet_id')
                 ->references('id')->on('otvet')->onDelete('cascade');
             $table->foreign('sprav_id')
-                ->references('id')->on('sprav');
+                ->references('id')->on('sprav')->onDelete('cascade');;
             $table->foreign('block_id')
-                ->references('id')->on('blocks');
+                ->references('id')->on('blocks')->onDelete('cascade');;
             $table->timestamps();
         });
     }
