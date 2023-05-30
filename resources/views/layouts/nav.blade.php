@@ -75,3 +75,44 @@
         </div>
     </div>
 </nav>
+
+{{--Для Саши--}}
+
+{{--<!-- Right Side Of Navbar -->--}}
+{{--<ul class="navbar-nav navbar-right"  @style('position: fixed; top: 2; right: 0; z-index: 9999;')--}}
+{{--<!-- Authentication Links -->--}}
+{{--@guest--}}
+{{--    <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Войти</a></li>--}}
+{{--    <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Зарегистрироваться</a></li>--}}
+{{--@else--}}
+{{--    <li class="nav-item dropdown">--}}
+{{--        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">--}}
+{{--            {{ Auth::user()->name }} <span class="caret"></span>--}}
+{{--        </a>--}}
+
+{{--        <ul class="dropdown-menu dropdown-menu-end">--}}
+{{--            <li>--}}
+{{--                --}}{{--                                <a class="dropdown-item" href="{{ route('profiles', ['id' => Auth::user()->id]) }}">Мой профиль</a>--}}
+{{--                <a class="dropdown-item" href="{{ url('/profiles/' . Auth::user()->id) }}">Мой профиль</a>--}}
+{{--                --}}{{--                               <a class="dropdown-item" href="{{ route('profiles.show', ['id' => Auth::user()->id]) }}">Мой профиль</a>--}}
+{{--            </li>--}}
+{{--            <li>--}}
+{{--                <a class="dropdown-item" href="{{ route('profile.edit') }}">Редактировать профиль</a>--}}
+{{--            </li>--}}
+
+{{--            <li>--}}
+{{--                <a class="dropdown-item" href="{{ route('logout') }}"--}}
+{{--                   onclick="event.preventDefault();--}}
+{{--                                                     document.getElementById('logout-form').submit();">--}}
+{{--                    Выйти--}}
+{{--                </a>--}}
+
+{{--                <form id="logout-form" action="{{ route('logout') }}" method="POST"--}}
+{{--                      style="display: none;">--}}
+{{--                    @csrf--}}
+{{--                </form>--}}
+{{--            </li>--}}
+{{--        </ul>--}}
+{{--    </li>--}}
+{{--    @endguest--}}
+{{--    </ul>--}}
